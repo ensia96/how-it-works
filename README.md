@@ -24,6 +24,22 @@ how-it-works/
 │   └── loader
 ├── runtimes/
 │   ├── java/
+│   │   ├── execution/
+│   │   │   ├── opcode
+│   │   │   ├── instruction
+│   │   │   ├── operand-stack
+│   │   │   ├── stack-frame
+│   │   │   ├── interpreter
+│   │   │   └── jit-compilation
+│   │   ├── classloading/
+│   │   │   ├── class-definition
+│   │   │   └── class-loading
+│   │   ├── memory/
+│   │   │   ├── heap-object
+│   │   │   └── mark-sweep
+│   │   └── concurrency/
+│   │       ├── virtual-thread
+│   │       └── scheduler
 │   ├── python
 │   └── node
 ├── frameworks/

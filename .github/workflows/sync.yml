@@ -1,0 +1,21 @@
+name: Dispatch blog deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch blog deployment
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          gh api --method POST \
+            "repos/$REPOSITORY_OWNER/ensia96.github.io/actions/workflows/deploy.yml/dispatches" \
+            -f ref=main
